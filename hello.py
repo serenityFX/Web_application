@@ -4,14 +4,13 @@ def wsgi_application(environ, start_response):
 
 	status = '200 OK'
 
-	param = urlparse.parse_qs(environ['QUERY_STRING'],1)
-	paramr = urlparse.parse_qs(environ['QUERY_STRING'],0)
+	param = urlparse.parse_qsl(environ['QUERY_STRING'],1)
 
-	for i, param in enumerate(param):
-    print i, '-->', param
+	str = ''
 	
-	for i, param in enumerate(param):
-    print i, '-->', paramr
+	for i in param
+			str += i[0] + '=' + i[1] + '\r\n'
+	
 	
 	
 	headers = [
@@ -19,4 +18,4 @@ def wsgi_application(environ, start_response):
 	]
 
 	start_response(status,headers)
-	return [param]
+	return [str]
