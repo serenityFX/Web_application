@@ -8,7 +8,7 @@ def wsgi_application(environ, start_response):
 
 	str = ''
 	
-	for i in param
+	for i in param:
 			str += i[0] + '=' + i[1] + '\r\n'
 	
 	
