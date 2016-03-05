@@ -8,3 +8,6 @@ def test(request, *args, **kwargs):
 
 def error(request, *args, **kwargs):
 	return HttpResponseNotFound(render_to_string('404.html'))
+
+def question(request, *args, **kwargs):
+	return HttpResponse("Hello")
